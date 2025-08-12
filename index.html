@@ -1,39 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Vice City Page</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-  <style>
-    /* This CSS block sets the black background and font */
-    body {
-      background-color: #000; /* Black background */
-      color: #fff; /* White text color for readability */
-      font-family: 'Bebas Neue', sans-serif; /* Sets the Vice City style font */
-      text-align: center;
-      padding-top: 50px;
-    }
-    
-    h1 {
-      font-size: 5rem; /* Makes the heading big and bold */
-      letter-spacing: 5px; /* Adds space between letters */
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome to Vice City</h1>
-  <p>This is my new website with a retro feel!</p>
-=======
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
@@ -44,70 +11,35 @@
       font-style: normal;
     }
 
-    :root{
-      --bg1:#0f0c2f;
-      --bg2:#1f183f;
-      --pink:#ff66cc;
-      --outline:#ffd6f0;
-      --black:#000000;
-    }
-    html,body{height:100%;margin:0;}
-    body{
-      background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
-      display:flex;align-items:center;justify-content:center; padding:40px;
-      color:#fff;
+    html,body{
+      height:100%;
+      margin:0;
+      background: transparent;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    .logo-wrap{
-      position:relative;
-      width:min(920px,95%);
-      height:260px;
-      display:flex;align-items:center;justify-content:center;
-    }
-
-    .vc-shadow, .vc-main{
-      position:absolute;left:0;right:0;margin:auto;
+    .vc-main{
       font-family: 'ViceCity', cursive;
+      font-size:132px;
       font-weight:700;
+      color:#ff66cc;
       letter-spacing:1px;
       text-align:center;
       line-height:1;
       user-select:none;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* simple solid backing (no blur) */
-    .vc-shadow{
-      font-size:140px;
-      transform:translate(22px,18px) skewX(-6deg) rotate(-3deg);
-      color:var(--black);
-      z-index:1;
-      letter-spacing:0.5px;
-    }
-
-    /* main text with NO shadow/glow */
-    .vc-main{
-      font-size:132px;
-      color:var(--pink);
-      z-index:2;
-      transform:translateY(0) skewX(-4deg);
-      /* text-shadow removed to eliminate glow/outline */
+      transform: skewX(-4deg);
     }
 
     @media (max-width:640px){
-      .vc-shadow{font-size:72px; transform:translate(12px,9px) skewX(-6deg) rotate(-3deg)}
       .vc-main{font-size:66px}
-      .logo-wrap{height:140px}
     }
-
   </style>
 </head>
 <body>
-  <main class="logo-wrap">
-    <div class="vc-shadow">Skibidi lamao ded</div>
-    <div class="vc-main">Skibidi lamao ded</div>
-  </main>
->>>>>>> 2e2bf1e6a690e3af7381433545a80af1d07ebec9
+  <div class="vc-main">Skibidi lamao ded</div>
 </body>
 </html>
