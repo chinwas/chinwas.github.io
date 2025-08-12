@@ -4,25 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vice City Title — Demo</title>
-  <!-- Google Font similar to the Vice City script -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    /* Page layout */
+    @font-face {
+      font-family: 'ViceCity';
+      src: url('rage italic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     :root{
-      --bg1:#0f0c2f; /* dark purple */
-      --bg2:#1f183f; /* slightly lighter */
-      --neon-pink:#ff66cc; /* main pink */
-      --neon-outline:#ffd6f0; /* pale pink highlight */
+      --bg1:#0f0c2f;
+      --bg2:#1f183f;
+      --neon-pink:#ff66cc;
+      --neon-outline:#ffd6f0;
       --black-shadow: #000000;
     }
-    html,body{height:100%;margin:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    html,body{height:100%;margin:0;}
     body{
       background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
       display:flex;align-items:center;justify-content:center; padding:40px;
       color:#fff;
     }
 
-    /* Container sized for GitHub Pages preview */
     .logo-wrap{
       position:relative;
       width:min(920px,95%);
@@ -30,10 +33,9 @@
       display:flex;align-items:center;justify-content:center;
     }
 
-    /* Two-layer technique: black drop (shadow) + neon script on top */
     .vc-shadow, .vc-main{
       position:absolute;left:0;right:0;margin:auto;
-      font-family: 'Pacifico', cursive;
+      font-family: 'ViceCity', cursive;
       font-weight:700;
       letter-spacing:1px;
       text-align:center;
@@ -43,9 +45,8 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Black thick shadow/backing — offset slightly to mimic the logo's black shadow */
     .vc-shadow{
-      font-size:140px; /* tweak to scale */
+      font-size:140px;
       transform:translate(22px,18px) skewX(-6deg) rotate(-3deg);
       color:var(--black-shadow);
       filter: blur(0.6px);
@@ -53,30 +54,24 @@
       letter-spacing:0.5px;
     }
 
-    /* Main neon text */
     .vc-main{
       font-size:132px;
       color:var(--neon-pink);
       z-index:2;
       transform:translateY(0) skewX(-4deg);
-      /* soft pale highlight edge like the image */
-      -webkit-text-stroke:4px rgba(255,255,255,0.0); /* keep shape crisp */
-      /* multiple shadows to create glow + thin darker outline */
       text-shadow:
-         0 2px 0 rgba(0,0,0,0.45),     /* subtle inner dark */
+         0 2px 0 rgba(0,0,0,0.45),
          0 0 6px rgba(255,102,204,0.45),
          0 0 18px rgba(255,102,204,0.18),
          0 0 28px rgba(255,102,204,0.10),
-         0 -2px 0 rgba(255,214,240,0.6); /* pale top highlight */
+         0 -2px 0 rgba(255,214,240,0.6);
     }
 
-    /* Script underline flourish (a pseudo-handwritten stroke) */
     .flourish{
       position:absolute;right:8%;bottom:18%;width:70%;height:48px;z-index:2;pointer-events:none;
       transform: rotate(-6deg) translateX(8px);
     }
 
-    /* small responsive tweaks */
     @media (max-width:640px){
       .vc-shadow{font-size:72px; transform:translate(12px,9px) skewX(-6deg) rotate(-3deg)}
       .vc-main{font-size:66px}
@@ -87,13 +82,9 @@
 </head>
 <body>
   <main class="logo-wrap" role="img" aria-label="Vice City style title">
-    <!-- thick black backing to emulate the logo shadow -->
     <div class="vc-shadow">Vice City</div>
-
-    <!-- top neon script -->
     <div class="vc-main">Vice City</div>
 
-    <!-- an SVG flourish / underline to mimic the extended stroke in the example -->
     <svg class="flourish" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -104,15 +95,10 @@
           </feMerge>
         </filter>
       </defs>
-      <!-- black stroked base -->
       <path d="M40 60 C180 10, 360 10, 520 60 C620 90, 760 110, 960 50" stroke="#000" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
-      <!-- pink neon stroke on top -->
       <path d="M40 60 C180 10, 360 10, 520 60 C620 90, 760 110, 960 50" stroke="#ff66cc" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-      <!-- thin pale highlight -->
       <path d="M48 56 C188 6, 368 6, 528 56 C628 86, 768 106, 968 46" stroke="#ffd6f0" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
     </svg>
   </main>
-
-  <!-- Short usage note for GitHub Pages: place this file in the root of your repo (index.html) and enable Pages -->
 </body>
 </html>
