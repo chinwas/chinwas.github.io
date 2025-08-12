@@ -14,9 +14,9 @@
     :root{
       --bg1:#0f0c2f;
       --bg2:#1f183f;
-      --neon-pink:#ff66cc;
-      --neon-outline:#ffd6f0;
-      --black-shadow: #000000;
+      --pink:#ff66cc;
+      --outline:#ffd6f0;
+      --black:#000000;
     }
     html,body{height:100%;margin:0;}
     body{
@@ -44,26 +44,22 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
+    /* simple solid backing (no blur) */
     .vc-shadow{
       font-size:140px;
       transform:translate(22px,18px) skewX(-6deg) rotate(-3deg);
-      color:var(--black-shadow);
-      filter: blur(0.6px);
+      color:var(--black);
       z-index:1;
       letter-spacing:0.5px;
     }
 
+    /* main text with NO shadow/glow */
     .vc-main{
       font-size:132px;
-      color:var(--neon-pink);
+      color:var(--pink);
       z-index:2;
       transform:translateY(0) skewX(-4deg);
-      text-shadow:
-         0 2px 0 rgba(0,0,0,0.45),
-         0 0 6px rgba(255,102,204,0.45),
-         0 0 18px rgba(255,102,204,0.18),
-         0 0 28px rgba(255,102,204,0.10),
-         0 -2px 0 rgba(255,214,240,0.6);
+      /* text-shadow removed to eliminate glow/outline */
     }
 
     @media (max-width:640px){
