@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Vice City Page</title>
@@ -32,5 +33,85 @@
 <body>
   <h1>Welcome to Vice City</h1>
   <p>This is my new website with a retro feel!</p>
+=======
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    @font-face {
+      font-family: 'ViceCity';
+      src: url('rage italic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root{
+      --bg1:#0f0c2f;
+      --bg2:#1f183f;
+      --neon-pink:#ff66cc;
+      --neon-outline:#ffd6f0;
+      --black-shadow: #000000;
+    }
+    html,body{height:100%;margin:0;}
+    body{
+      background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
+      display:flex;align-items:center;justify-content:center; padding:40px;
+      color:#fff;
+    }
+
+    .logo-wrap{
+      position:relative;
+      width:min(920px,95%);
+      height:260px;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    .vc-shadow, .vc-main{
+      position:absolute;left:0;right:0;margin:auto;
+      font-family: 'ViceCity', cursive;
+      font-weight:700;
+      letter-spacing:1px;
+      text-align:center;
+      line-height:1;
+      user-select:none;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .vc-shadow{
+      font-size:140px;
+      transform:translate(22px,18px) skewX(-6deg) rotate(-3deg);
+      color:var(--black-shadow);
+      filter: blur(0.6px);
+      z-index:1;
+      letter-spacing:0.5px;
+    }
+
+    .vc-main{
+      font-size:132px;
+      color:var(--neon-pink);
+      z-index:2;
+      transform:translateY(0) skewX(-4deg);
+      text-shadow:
+         0 2px 0 rgba(0,0,0,0.45),
+         0 0 6px rgba(255,102,204,0.45),
+         0 0 18px rgba(255,102,204,0.18),
+         0 0 28px rgba(255,102,204,0.10),
+         0 -2px 0 rgba(255,214,240,0.6);
+    }
+
+    @media (max-width:640px){
+      .vc-shadow{font-size:72px; transform:translate(12px,9px) skewX(-6deg) rotate(-3deg)}
+      .vc-main{font-size:66px}
+      .logo-wrap{height:140px}
+    }
+
+  </style>
+</head>
+<body>
+  <main class="logo-wrap">
+    <div class="vc-shadow">Skibidi lamao ded</div>
+    <div class="vc-main">Skibidi lamao ded</div>
+  </main>
+>>>>>>> 2e2bf1e6a690e3af7381433545a80af1d07ebec9
 </body>
 </html>
