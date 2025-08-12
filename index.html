@@ -5,23 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Vice City Page</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
   <style>
-    /* This CSS block sets the black background and font */
+    /* This rule defines the custom font */
+    @font-face {
+      font-family: 'Pricedown';
+      src: url('fonts/Pricedown.ttf') format('truetype');
+    }
+
     body {
       background-color: #000; /* Black background */
       color: #fff; /* White text color for readability */
-      font-family: 'Bebas Neue', sans-serif; /* Sets the Vice City style font */
+      font-family: Arial, sans-serif; /* Fallback font */
       text-align: center;
       padding-top: 50px;
     }
     
     h1 {
-      font-size: 5rem; /* Makes the heading big and bold */
-      letter-spacing: 5px; /* Adds space between letters */
+      font-family: 'Pricedown', sans-serif; /* Applies the GTA style font to the heading */
+      font-size: 5rem;
+      letter-spacing: 5px;
     }
 
     p {
@@ -30,7 +32,7 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to Vice City</h1>
+  <h1>WELCOME TO VICE CITY</h1>
   <p>This is my new website with a retro feel!</p>
 </body>
 </html>
