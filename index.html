@@ -1,38 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Vice City Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the 80s</title>
+    <!-- Tailwind CSS for easy styling and layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /*
+          Importing the 'Pricedown' font, which is famous for its use in the
+          Grand Theft Auto series. We're loading it from a public web font repository.
+        */
+        @font-face {
+            font-family: 'Pricedown';
+            /* A publicly available version of the font */
+            src: url('https://db.onlinewebfonts.com/t/16335df7769544e45099514e4cc829a7.woff2') format('woff2'),
+                 url('https://db.onlinewebfonts.com/t/16335df7769544e45099514e4cc829a7.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-  <style>
-    /* This rule defines the custom font */
-    @font-face {
-      font-family: 'Pricedown';
-      src: url('fonts/Pricedown.ttf') format('truetype');
-    }
+        /* Custom styles for the Vice City look */
+        .font-vice-city {
+            font-family: 'Pricedown', sans-serif;
+        }
 
-    body {
-      background-color: #000; /* Black background */
-      color: #fff; /* White text color for readability */
-      font-family: Arial, sans-serif; /* Fallback font */
-      text-align: center;
-      padding-top: 50px;
-    }
-    
-    h1 {
-      font-family: 'Pricedown', sans-serif; /* Applies the GTA style font to the heading */
-      font-size: 5rem;
-      letter-spacing: 5px;
-    }
+        /* Creating the iconic neon glow effect.
+          This is achieved by stacking multiple text-shadows with different colors and blurs.
+          The first shadow is a sharp, bright inner glow, and the subsequent shadows are
+          softer, creating a radiating neon effect.
+        */
+        .neon-glow {
+            color: #ffffff; /* White base color for the text */
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #f09,
+                0 0 82px #f09,
+                0 0 92px #f09,
+                0 0 102px #f09,
+                0 0 151px #f09; /* Hot pink glow (hex #f09 is short for #ff0099) */
+        }
 
-    p {
-      font-size: 1.5rem;
-    }
-  </style>
+        /* A subtle animation to make the neon glow flicker slightly */
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 10px #fff,
+                    0 0 21px #fff,
+                    0 0 42px #f09,
+                    0 0 82px #f09,
+                    0 0 92px #f09,
+                    0 0 102px #f09,
+                    0 0 151px #f09;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
+        .flicker-animation {
+            animation: flicker 5s infinite alternate;
+        }
+    </style>
 </head>
-<body>
-  <h1>WELCOME TO VICE CITY</h1>
-  <p>This is my new website with a retro feel!</p>
+<body class="bg-gray-900">
+
+    <!-- 
+      Main container using Flexbox to center content both vertically and horizontally.
+      The background is a gradient from a dark blue to a deep purple, mimicking a Vice City sunset.
+    -->
+    <div class="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#02041b] to-[#2A093D]">
+        <div class="text-center p-4">
+            <!-- 
+              The main title. We apply the custom font, neon glow, flicker animation,
+              and responsive text size classes. The text size adjusts based on screen width.
+            -->
+            <h1 class="font-vice-city neon-glow flicker-animation text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider">
+                GITHUB CITY
+            </h1>
+            <!-- A subtitle with a more subtle retro style -->
+            <p class="mt-4 text-lg md:text-2xl text-cyan-300 font-mono tracking-widest opacity-80">
+                The 1980s Coding Scene
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>
