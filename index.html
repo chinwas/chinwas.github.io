@@ -4,67 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    /* Use your local font file in the same directory as the HTML */
     @font-face {
       font-family: 'ViceCity';
       src: url('rage italic.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
-      font-display: swap;
     }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: #000; /* keep black background (game-like) */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    html,body{
+      height:100%;
+      margin:0;
+      background: black;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .vc-main{
       font-family: 'ViceCity', cursive;
-      font-size: 132px;
-      font-weight: 700;
-      color: #ffffff; /* white fill (body) */
-      letter-spacing: 1px;
-      text-align: center;
-      line-height: 1;
-      user-select: none;
-
-      /* smoothing / crispness improvements */
-      -webkit-font-smoothing: antialiased; /* macOS / iOS */
-      -moz-osx-font-smoothing: grayscale;  /* Firefox on mac */
-      text-rendering: geometricPrecision;  /* retain vector precision */
-
-      /* Pink outline similar to the Vice City logo */
-      -webkit-text-stroke-width: 7px;
-      -webkit-text-stroke-color: #ff66cc;
-      /* For non-WebKit browsers, simulate outline with layered pink text-shadows */
-      text-shadow:
-        -1px -1px 0 #ff66cc,
-         1px -1px 0 #ff66cc,
-        -1px  1px 0 #ff66cc,
-         1px  1px 0 #ff66cc,
-        -2px  0px 0 #ff66cc,
-         2px  0px 0 #ff66cc,
-         0px -2px 0 #ff66cc,
-         0px  2px 0 #ff66cc,
-        /* slight faint pink glow */
-         0 0 8px rgba(255,102,204,0.14);
-
-      /* tiny inner shadow to help white sit on the pink outline */
-      filter: drop-shadow(0 2px 0 rgba(0,0,0,0.45));
-
-      /* force GPU compositing for smoother transforms */
-      transform: translateZ(0) skewX(-4deg);
-      will-change: transform, filter;
-
-      font-feature-settings: "liga" 1;
+      font-size:132px;
+      font-weight:700;
+      color: transparent;
+      -webkit-text-stroke: 1px #ff66cc;
+      text-shadow: 0 0 8px #ff66cc, 0 0 16px #ff66cc, 0 0 24px #ff3399;
+      letter-spacing:1px;
+      text-align:center;
+      line-height:1;
+      user-select:none;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transform: skewX(-4deg);
     }
 
-    /* responsive scaling */
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .vc-main{font-size:66px}
     }
   </style>
