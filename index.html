@@ -6,23 +6,17 @@
     <title>Welcome to the 80s</title>
     <!-- Tailwind CSS for easy styling and layout -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importing a script font from Google Fonts that mimics the Vice City style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         /*
-          Importing the 'Pricedown' font, which is famous for its use in the
-          Grand Theft Auto series. We're loading it from a public web font repository.
+          This custom class applies the 'Great Vibes' font, which has a flowing,
+          script-like appearance similar to the "Vice City" logo.
         */
-        @font-face {
-            font-family: 'Pricedown';
-            /* A publicly available version of the font */
-            src: url('https://db.onlinewebfonts.com/t/16335df7769544e45099514e4cc829a7.woff2') format('woff2'),
-                 url('https://db.onlinewebfonts.com/t/16335df7769544e45099514e4cc829a7.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* Custom styles for the Vice City look */
-        .font-vice-city {
-            font-family: 'Pricedown', sans-serif;
+        .font-vice-script {
+            font-family: 'Great Vibes', cursive;
         }
 
         /* Creating the iconic neon glow effect.
@@ -33,28 +27,26 @@
         .neon-glow {
             color: #ffffff; /* White base color for the text */
             text-shadow:
-                0 0 7px #fff,
+                0 0 5px #fff,
                 0 0 10px #fff,
-                0 0 21px #fff,
-                0 0 42px #f09,
-                0 0 82px #f09,
-                0 0 92px #f09,
-                0 0 102px #f09,
-                0 0 151px #f09; /* Hot pink glow (hex #f09 is short for #ff0099) */
+                0 0 20px #ff00ff,
+                0 0 30px #ff00ff,
+                0 0 40px #ff00ff,
+                0 0 55px #ff00ff,
+                0 0 75px #ff00ff; /* Magenta/pink neon glow */
         }
 
         /* A subtle animation to make the neon glow flicker slightly */
         @keyframes flicker {
             0%, 18%, 22%, 25%, 53%, 57%, 100% {
                 text-shadow:
-                    0 0 7px #fff,
+                    0 0 5px #fff,
                     0 0 10px #fff,
-                    0 0 21px #fff,
-                    0 0 42px #f09,
-                    0 0 82px #f09,
-                    0 0 92px #f09,
-                    0 0 102px #f09,
-                    0 0 151px #f09;
+                    0 0 20px #ff00ff,
+                    0 0 30px #ff00ff,
+                    0 0 40px #ff00ff,
+                    0 0 55px #ff00ff,
+                    0 0 75px #ff00ff;
             }
             20%, 24%, 55% {
                 text-shadow: none;
@@ -62,7 +54,7 @@
         }
 
         .flicker-animation {
-            animation: flicker 5s infinite alternate;
+            animation: flicker 3s infinite alternate;
         }
     </style>
 </head>
@@ -75,16 +67,12 @@
     <div class="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#02041b] to-[#2A093D]">
         <div class="text-center p-4">
             <!-- 
-              The main title. We apply the custom font, neon glow, flicker animation,
+              The main title. We apply the new script font, neon glow, flicker animation,
               and responsive text size classes. The text size adjusts based on screen width.
             -->
-            <h1 class="font-vice-city neon-glow flicker-animation text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider">
-                GITHUB CITY
+            <h1 class="font-vice-script neon-glow flicker-animation text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] tracking-wider">
+                Vice City
             </h1>
-            <!-- A subtitle with a more subtle retro style -->
-            <p class="mt-4 text-lg md:text-2xl text-cyan-300 font-mono tracking-widest opacity-80">
-                The 1980s Coding Scene
-            </p>
         </div>
     </div>
 
