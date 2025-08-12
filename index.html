@@ -16,7 +16,7 @@
     html, body {
       height: 100%;
       margin: 0;
-      background: #000; /* solid black background as requested */
+      background: #000; /* keep black background (game-like) */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -26,7 +26,7 @@
       font-family: 'ViceCity', cursive;
       font-size: 132px;
       font-weight: 700;
-      color: #ff66cc; /* neon pink */
+      color: #ffffff; /* white fill (body) */
       letter-spacing: 1px;
       text-align: center;
       line-height: 1;
@@ -37,22 +37,29 @@
       -moz-osx-font-smoothing: grayscale;  /* Firefox on mac */
       text-rendering: geometricPrecision;  /* retain vector precision */
 
-      /* subtle outline to hide jagged edges */
-      -webkit-text-stroke: 0.6px rgba(0,0,0,0.35);
-
-      /* neon glow: layered text-shadows plus a drop-shadow filter */
+      /* Pink outline similar to the Vice City logo */
+      -webkit-text-stroke-width: 7px;
+      -webkit-text-stroke-color: #ff66cc;
+      /* For non-WebKit browsers, simulate outline with layered pink text-shadows */
       text-shadow:
-        0 0 2px rgba(255,102,204,0.9),
-        0 0 8px rgba(255,102,204,0.65),
-        0 0 18px rgba(255,102,204,0.45),
-        0 0 28px rgba(255,102,204,0.25);
-      filter: drop-shadow(0 8px 20px rgba(255,102,204,0.18));
+        -1px -1px 0 #ff66cc,
+         1px -1px 0 #ff66cc,
+        -1px  1px 0 #ff66cc,
+         1px  1px 0 #ff66cc,
+        -2px  0px 0 #ff66cc,
+         2px  0px 0 #ff66cc,
+         0px -2px 0 #ff66cc,
+         0px  2px 0 #ff66cc,
+        /* slight faint pink glow */
+         0 0 8px rgba(255,102,204,0.14);
+
+      /* tiny inner shadow to help white sit on the pink outline */
+      filter: drop-shadow(0 2px 0 rgba(0,0,0,0.45));
 
       /* force GPU compositing for smoother transforms */
       transform: translateZ(0) skewX(-4deg);
       will-change: transform, filter;
 
-      /* make letterforms render a bit bolder/smoother at small sizes */
       font-feature-settings: "liga" 1;
     }
 
